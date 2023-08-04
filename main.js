@@ -183,8 +183,64 @@ let projecWrapper = document.querySelector('.project-wrapper');
 
 const projects = [
     {
-        projectName: 'Portfolio',
+        projectName: 'Weather App ',
+        projectImg: 'images/project-images/project-12.webp',
+        releasedDate: '2022',
+        description: 'Hello this is apple clone website',
+        links: {
+            liveLink: 'https://github.com',
+            gitHubLinks: 'github.com/myproject'
+        },
+        language: { 
+            lang1: {name: 'html', line: 1000, color: '#fc6238'},
+            lang2: {name: 'css', line: 200, color: '#00b0ba'},
+            lang3: {name: 'javascript', line: 550, color: '#ffec59'},
+            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
+            lang4: {name: 'React js', line: 0, color: '#e77577'},
+            lang6: {name: 'Typescript', line: 106, color: 'magenta'},
+        },
+    },
+
+    {
+        projectName: 'Weather App ',
+        projectImg: 'images/project-images/project-14.webp',
+        releasedDate: '2022',
+        description: 'Hello this is apple clone website',
+        links: {
+            liveLink: 'https://github.com',
+            gitHubLinks: 'github.com/myproject'
+        },
+        language: { 
+            lang1: {name: 'html', line: 1000, color: '#fc6238'},
+            lang2: {name: 'css', line: 200, color: '#00b0ba'},
+            lang3: {name: 'javascript', line: 550, color: '#ffec59'},
+            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
+            lang4: {name: 'React js', line: 0, color: '#e77577'},
+            lang6: {name: 'Typescript', line: 106, color: 'magenta'},
+        },
+    },
+    {
+        projectName: 'Ecommerce website ',
         projectImg: 'images/project-images/project-6.jpg',
+
+        releasedDate: '2023',
+        description: 'Hello this is apple clone website',
+        links: {
+            liveLink: 'https://github.com',
+            gitHubLinks: 'github.com/myproject'
+        },
+        language: { 
+            lang1: {name: 'html', line: 0, color: '#fc6238'},
+            lang2: {name: 'css', line: 19, color: '#00b0ba'},
+            lang3: {name: 'javascript', line: 20, color: '#ffec59'},
+            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
+            lang4: {name: 'React js', line: 51, color: '#e77577'},
+            lang6: {name: 'Typescript', line: 10, color: 'magenta'},
+        },
+    },
+    {
+        projectName: 'Portfolio',
+        projectImg: 'images/project-images/project-9.jpg',
         releasedDate: '2023',
         description: 'Hello this is my portfolio',
         links: {
@@ -201,10 +257,10 @@ const projects = [
         },
     },
     {
-        projectName: 'School website ',
-        projectImg: 'images/project-images/project-8.jpg',
+        projectName: 'Apple Clone website ',
+        projectImg: 'images/project-images/project-13.webp',
         releasedDate: '2020',
-        description: 'Hello this is school website that i made for school',
+        description: 'I make this website using <strong>Bootstrap</strong> ',
         links: {
             liveLink: 'https://github.com',
             gitHubLinks: 'github.com/myproject'
@@ -219,62 +275,9 @@ const projects = [
         },
     },
 
-    {
-        projectName: 'Ecommerce website ',
-        projectImg: 'images/project-images/project-11.png',
-        releasedDate: '2023',
-        description: 'Hello this is apple clone website',
-        links: {
-            liveLink: 'https://github.com',
-            gitHubLinks: 'github.com/myproject'
-        },
-        language: { 
-            lang1: {name: 'html', line: 0, color: '#fc6238'},
-            lang2: {name: 'css', line: 19, color: '#00b0ba'},
-            lang3: {name: 'javascript', line: 20, color: '#ffec59'},
-            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
-            lang4: {name: 'React js', line: 51, color: '#e77577'},
-            lang6: {name: 'Typescript', line: 10, color: 'magenta'},
-        },
-    },
 
-    {
-        projectName: 'Weather App ',
-        projectImg: 'images/project-images/project-8.webp',
-        releasedDate: '2022',
-        description: 'Hello this is apple clone website',
-        links: {
-            liveLink: 'https://github.com',
-            gitHubLinks: 'github.com/myproject'
-        },
-        language: { 
-            lang1: {name: 'html', line: 1000, color: '#fc6238'},
-            lang2: {name: 'css', line: 200, color: '#00b0ba'},
-            lang3: {name: 'javascript', line: 550, color: '#ffec59'},
-            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
-            lang4: {name: 'React js', line: 0, color: '#e77577'},
-            lang6: {name: 'Typescript', line: 106, color: 'magenta'},
-        },
-    },
 
-    {
-        projectName: 'Weather App ',
-        projectImg: 'images/project-images/project-1.jpg',
-        releasedDate: '2022',
-        description: 'Hello this is apple clone website',
-        links: {
-            liveLink: 'https://github.com',
-            gitHubLinks: 'github.com/myproject'
-        },
-        language: { 
-            lang1: {name: 'html', line: 1000, color: '#fc6238'},
-            lang2: {name: 'css', line: 200, color: '#00b0ba'},
-            lang3: {name: 'javascript', line: 550, color: '#ffec59'},
-            lang5: {name: 'Bootstrap', line: 0, color: '#74737a'},
-            lang4: {name: 'React js', line: 0, color: '#e77577'},
-            lang6: {name: 'Typescript', line: 106, color: 'magenta'},
-        },
-    },
+
 ];
 
 projecWrapper.innerHTML = projects.map(item => {
@@ -433,9 +436,12 @@ skillBoxWrapper.innerHTML = skills.map(item => {
 
 // make about modal
 
-let closeAboutModal = document.querySelector('.close-about-modal');
+let closeAboutModal = document.querySelector('#close-about-modal');
 let openAboutModal = document.querySelector('#open-about-modal');
 let aboutModal = document.querySelector('.about-modal');
+let aboutLikeBtn = document.querySelector('#about-like-btn');
+let aboutLikeCounter = document.querySelector('.wrapper .like-container .like-counter');
+let userLikes = 17;
 
 openAboutModal.addEventListener('click', () => {
     aboutModal.classList.add('active');
@@ -455,6 +461,21 @@ window.addEventListener('scroll', () => {
         aboutModal.classList.remove('active');
     };
 });
+
+
+aboutLikeBtn.addEventListener('click', e => {
+    aboutLikeBtn.classList.toggle('active');
+    aboutLikeBtn.classList.contains('active') == true ? userLikes++ : userLikes--;
+    updateAboutLike();
+});
+
+const updateAboutLike = () => {
+     aboutLikeCounter.innerText = userLikes;
+};
+updateAboutLike();
+
+
+
 
 
 
@@ -492,27 +513,27 @@ messageInputs.forEach(item => {
 
 //Making main loader;
 
-let mainLoader = document.querySelector('.main-loader');
-let loaderSlider = document.querySelector('.loader-slider');
-let loaderCounter = 0;
-setInterval(() => {
-    loaderCounter++
-    if(loaderCounter >= 3){
-        loaderCounter = 0
-    }
-    loaderSlider.style.transform = `translateY(-${loaderCounter *  90}px )`;
+// let mainLoader = document.querySelector('.main-loader');
+// let loaderSlider = document.querySelector('.loader-slider');
+// let loaderCounter = 0;
+// setInterval(() => {
+//     loaderCounter++
+//     if(loaderCounter >= 3){
+//         loaderCounter = 0
+//     }
+//     loaderSlider.style.transform = `translateY(-${loaderCounter *  90}px )`;
 
-}, 500);
+// }, 500);
 
-setTimeout(() => {
-    mainLoader.classList.add('active');
-}, 1500);
-setTimeout(() => {
-    mainLoader.remove();
-},3000);
-window.addEventListener('load', e => {
-    console.log(e);
-});
+// setTimeout(() => {
+//     mainLoader.classList.add('active');
+// }, 1500);
+// setTimeout(() => {
+//     mainLoader.remove();
+// },3000);
+// window.addEventListener('load', e => {
+//     console.log(e);
+// });
 
 
 //When user scrool the navlink will be indicator
@@ -545,3 +566,82 @@ const handleScroll = () => {
         };
     });
 };
+
+
+//Making rating container;
+let ratingContainer = document.querySelector('.rating-container');
+let ratingStar = document.querySelectorAll('.rating-bar i');
+let ratingResult = document.querySelector('.rating-result');
+let userRate = 0;
+
+ratingStar.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+        setTimeout(() => {
+            removeRatingContainer(ratingContainer);
+        },2000)
+        if(index == 0){
+            ratingResult.innerText = 'Bad'
+            ratingStar[0].classList.add('active');
+            ratingStar[1].classList.remove('active');
+            ratingStar[2].classList.remove('active');
+            ratingStar[3].classList.remove('active');
+            ratingStar[4].classList.remove('active');
+        }else if(index == 1){
+            ratingResult.innerText = 'Good'
+            ratingStar[0].classList.add('active');
+            ratingStar[1].classList.add('active');
+            ratingStar[2].classList.remove('active');
+            ratingStar[3].classList.remove('active');
+            ratingStar[4].classList.remove('active');
+        }else if(index == 2){
+            ratingResult.innerText = 'Very good'
+            ratingStar[0].classList.add('active');
+            ratingStar[1].classList.add('active');
+            ratingStar[2].classList.add('active');
+            ratingStar[3].classList.remove('active');
+            ratingStar[4].classList.remove('active');
+        }else if(index == 3){
+            ratingResult.innerText = 'Awesome'
+            ratingStar[0].classList.add('active');
+            ratingStar[1].classList.add('active');
+            ratingStar[2].classList.add('active');
+            ratingStar[3].classList.add('active');
+            ratingStar[4].classList.remove('active');
+        }else if(index == 4){
+            ratingResult.innerText = 'Outstanding'
+            ratingStar[0].classList.add('active');
+            ratingStar[1].classList.add('active');
+            ratingStar[2].classList.add('active');
+            ratingStar[3].classList.add('active');
+            ratingStar[4].classList.add('active');
+        };
+    });
+});
+
+window.onclick = function(e){
+    if(e.target == ratingContainer){
+        ratingContainer.classList.remove('active')
+
+        // ratingContainer.remove();
+    }
+}
+
+window.onscroll = (e) =>{
+    let scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    let scrrolled = window.scrollY;
+
+        console.log(scrollable);
+        // alert(scrollable == scrollable)
+
+    if(Math.ceil(scrrolled) === scrollable  ){
+        setTimeout(function(){
+            ratingContainer.classList.add('active');
+        }, 3000)
+    }
+}
+
+const removeRatingContainer = (item) => {
+    item.remove();
+}
+
+

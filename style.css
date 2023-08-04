@@ -45,12 +45,9 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
     background: var(--scroll-bg);
     width: 5px;
-    border-radius: 60px;
-    /* border-radius: 15px 0px 0px 15px; */
+    /* border-radius: 60px; */
+    border-radius: 35px 0px 0px 35px;
     transition: .4s ease-in-out;
-}
-body::-webkit-scrollbar-thumb:hover{
-    filter: brightness(40%);
 }
 body::-webkit-scrollbar-track{
     border-radius: 10px;
@@ -70,12 +67,13 @@ html{
 :root.light{
     /* --bg-1: linear-gradient(130deg, #0f7478,#68dfe6, #7ac6ab, #d3f6bb); */
     /* --bg-1: linear-gradient(30deg, #ce455e,#ff6a88, #ffb28b); */
-    --bg-1: linear-gradient(20deg, #171973 5%,#cfbce7 50%, #e160f3 30%, #8e7ffe 25%);
+    /* --bg-1: linear-gradient(20deg, #171973 5%,#cfbce7 50%, #e160f3 30%, #8e7ffe 25%); */
+    --bg-1: linear-gradient(250deg, #8d76e6,#9c66ff, #008ca1, #005460, #228fa0);
 
     /* --bg-1: linear-gradient(30deg, #55e7f8,#8579ec, #d1c2f9, #55e7f8); */
     /* --bg-1: linear-gradient(to bottom, #007f96 90%, #a28089 15% ); */
-    --bg-2: #fffefe ;
-    --bg-trans-1: rgba(0, 0, 0, 0.371);
+    --bg-2: #faf2f8 ;
+    --bg-trans-1: rgba(0, 0, 0, 0.378);
     --bg-img: url(images/bg5.webp);
     --scroll-bg: rgba(5, 5, 5, 0.891);
     --clr-1: white;
@@ -86,7 +84,7 @@ html{
 }
 :root.dark{
     --bg-1: linear-gradient(to bottom,#000000 90%,rgb(169, 58, 58)  20%);
-    --bg-2: #000;
+    --bg-2: #1a1313;
     --bg-trans-1: rgba(234, 234, 234, 0.754);
     --bg-img: url(images/bg3.jpg);
     --scroll-bg: rgb(255, 255, 255);
@@ -111,7 +109,7 @@ nav .nav-links{
     padding: 15px 23px;
     border-radius: 11px;
     background: var(--bg-trans-1);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
     transition: .2s background, color;
     display: flex;
     justify-content: center;
@@ -787,24 +785,24 @@ nav .nav-links ul li:hover{
 }
 .project-wrapper{
     display: grid;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
     grid-template-areas: 
-       "one two two"
-       "three three four" 
-       "five five five"
+       "one one two two"
+       "three three three three" 
+       "four four five five "
     ;
+    grid-template-rows: 500px 550px 500px;
 }
 .project-wrapper .project{
     position: relative;
     max-width: 100%;
     min-width: 100%;
-    max-height: 500px;
-    min-height: 500px;
+
     overflow: hidden;
     cursor: pointer;
     transition: .4s;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .project-wrapper .project:nth-child(1){grid-area: one;}
 .project-wrapper .project:nth-child(2){grid-area: two;}
@@ -824,9 +822,15 @@ nav .nav-links ul li:hover{
         "three three four four"
         "five five five five"
         ;
+        grid-template-rows: 500px 600px 500px;
     }
 }
 @media (max-width: 700px) {
+    .work-section main{
+        width: 100%;
+        padding:0px ;
+
+    }
     .project-wrapper{
         display: grid;
         gap: 15px;
@@ -838,10 +842,13 @@ nav .nav-links ul li:hover{
         "four"
         "five"
         ;
+        grid-template-rows: none;
     }
+
     .project-wrapper .project{
         max-height: 370px;
         min-height: 370px;
+        border-radius: 0px;
     }
 }
 .project-wrapper .project img{
@@ -965,6 +972,9 @@ nav .nav-links ul li:hover{
 .project-wrapper .project .detail .text-content p{
     font-size: 13px;
 }
+.project-wrapper .project .detail .text-content p strong{
+    text-decoration: underline;
+}
 
 .project-wrapper .project .detail > .action-btns{
     display: grid;
@@ -1003,10 +1013,7 @@ nav .nav-links ul li:hover{
 
 
 @media (max-width: 600px) {
-    .work-section main{
-        width: 100%;
-        padding: 15px;
-    }
+
      .project-wrapper .project .detail .language-wrap > ul{
         gap: 3px;
      }
@@ -1033,14 +1040,14 @@ nav .nav-links ul li:hover{
     color: var(--clr-2);
     overflow: hidden;
     position: relative;
-
 }
 
 .about-section .about-wrapper{
-    width: 70%;
-    padding: 60px 0px;
+    width: 90%;
+    padding: 100px 0px;
     display: flex;
     flex-direction: column;
+    gap: 50px;
     /* background: rgb(206, 166, 166); */
 }
 .about-section .cursor{
@@ -1060,24 +1067,28 @@ nav .nav-links ul li:hover{
 }
 .about-section .about-wrapper > header{
     width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .about-section .about-wrapper > header h2{
     font-size: 70px;
     position: relative;
-    display: flex;
-    justify-content: center;
+    width: fit-content;
 }
-.about-section .about-wrapper > header h2::before{
+.about-section .about-wrapper > header h2::after{
     content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--main-clr);
-    margin-bottom: 50px;
+    width: 100%;
+    height: 2px;
+    border-radius: 20px;
     position: absolute;
-    top: -30px;
-    animation: about-heading 2s infinite linear;
-}
+    background: var(--clr-2);
+    left: 0;
+    bottom: 0px;
+    transform: scale(1);
+    transition: .5s;
+    transform-origin: right;
+} 
 @keyframes about-heading {
     0%{
         transform: scale(0.5);
@@ -1093,34 +1104,29 @@ nav .nav-links ul li:hover{
 
 .about-section .about-wrapper .about-content{
     width: 100%;
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 .about-section .about-wrapper .about-content p{
-    font-size: 43px;
+    font-size: 30px;
     font-weight: 350;
 }
 
 .about-section .about-wrapper .about-content button{
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 500;
     background: transparent;
     cursor: pointer;
-    color: var(--clr-2);
+    color: var(--clr-1);
     position: relative;
-}
-.about-section .about-wrapper .about-content button::after{
-    content: '';
-    width: 100%;
-    height: 2px;
-    border-radius: 20px;
-    position: absolute;
+    width: fit-content;
+    padding: 4px 30px;
     background: var(--clr-2);
-    left: 0;
-    bottom: 0px;
-    transform: scale(1);
-    transition: .5s;
-    transform-origin: right;
+    border-radius: 30px;
 }
+
 
 .about-section .about-wrapper .about-content button:hover::after{
     transform: scale(0);
@@ -1157,6 +1163,7 @@ nav .nav-links ul li:hover{
     }
 }
 
+
 .about-modal{
     min-width: 100%;
     min-height: 100vh;
@@ -1170,7 +1177,7 @@ nav .nav-links ul li:hover{
     overflow: visible;
     transition: .5s;
     display: none;
-    background: #0000007c;
+    background: #00000098;
     /* align-items: flex-end; */
 
 }
@@ -1179,6 +1186,7 @@ nav .nav-links ul li:hover{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    cursor: pointer;
 }
 .about-modal .wrapper{
     width: 96%;
@@ -1188,9 +1196,12 @@ nav .nav-links ul li:hover{
     padding: 30px 70px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 30px;
     animation: aboutModalAnim .6s backwards;
     background: var(--modal-clr);
+    color: var(--clr-2);
+    cursor: default;
 }
 @keyframes aboutModalAnim {
     0%{
@@ -1200,112 +1211,235 @@ nav .nav-links ul li:hover{
         bottom: 0px;
     }
 }
-.about-modal .wrapper header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.about-modal .wrapper header h2{
-    font-size: 70px;
-}
-.about-modal .wrapper header button{
-    font-size: 25px;
-    background: transparent;
+.close-btn{
+    position: absolute;
+    left: 30px;
+    top: 30px;
     cursor: pointer;
-    color: var(--clr-2);
-    border-radius: 50%;
+}
+.close-btn i{
+    font-size: 25px;
+}
+.like-container {
     display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
     align-items: center;
-    gap: 4px;
+}
+.like-btn i{
+    font-size: 25px;
+    color: rgb(255, 219, 219);
+    transition: .4s;
+}
+.like-btn.active i{
+    color: rgb(212, 51, 51);
+}
+.like-btn:hover i{
+    color: rgb(212, 51, 51);
+}
+
+
+
+.about-modal .wrapper .profile-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.about-modal .wrapper .profile-detail .top{
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: -60px;
+}
+.about-modal .wrapper .profile-detail .top div{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+}
+.about-modal .wrapper .profile-detail .top div h2{
+    font-size: 16px;
+    font-weight: 700;
+    width: 90px;
+    border-radius: 30px;
+    padding: 3px 0px;
+    display: flex;
+    justify-content: center;
+    border: 1px rgba(164, 164, 164, 0.656) solid;
+}
+.about-modal .wrapper .profile-detail .top div span{
+    font-size: 14px;
+    font-weight: 500;
+}
+.about-modal .wrapper .profile-detail .top .profile-image{
+    cursor: pointer;
+}
+.about-modal .wrapper .profile-detail .top .profile-image img{
+    max-width: 140px;
+    border-radius: 15px;
+}
+.about-modal .wrapper .profile-detail .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.about-modal .wrapper .profile-detail .social-links{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+.about-modal .wrapper .profile-detail .social-links span{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #767575;
+    position: relative;
+}
+
+.about-modal .wrapper .profile-detail .social-links span::after{
+    content: '';
+    width: 80px;
+    padding: 3px 0px;
+    border-radius: 5px;
+    background: var(--clr-2);
+    position: absolute;
+    bottom: -30px;
+    color: var(--clr-1);
+    display: flex;
+    justify-content: center;
+    transform: scale(0);
+    transition: .4s;
+    transform-origin: left;
+}
+.about-modal .wrapper .profile-detail .social-links span:hover::after{
+    transform: scale(1);
+}
+.about-modal .wrapper .profile-detail .social-links span:nth-child(1)::after{
+    content: 'Facebook';
+}
+.about-modal .wrapper .profile-detail .social-links span:nth-child(2)::after{
+    content: 'Twitter';
+}
+.about-modal .wrapper .profile-detail .social-links span:nth-child(3)::after{
+    content: 'Linkdin';
 
 }
-.about-modal .wrapper header button span{
-    font-size: 17px;
+.about-modal .wrapper .profile-detail .social-links span:nth-child(4)::after{
+    content: 'Instagram';
+}
+.about-modal .wrapper .profile-detail .social-links span:nth-child(5)::after{
+    content: 'Github';
+}
+.about-modal .wrapper .profile-detail .social-links span i{
+    font-size: 20px;
+    transition: .4s;
+}
+.wrapper .profile-detail .social-links span:nth-child(1):hover{
+    background: rgb(0, 165, 194);
+    color: white;
+}
+.wrapper .profile-detail .social-links span:nth-child(2):hover{
+    background: rgb(40, 165, 255);
+    color: white;
+}
+.wrapper .profile-detail .social-links span:nth-child(3):hover{
+    background: rgb(40, 97, 255);
+    color: white;
+}
+.wrapper .profile-detail .social-links span:nth-child(4):hover{
+    background: rgb(255, 54, 40);
+    color: white;
+}
+.wrapper .profile-detail .social-links span:nth-child(5):hover{
+    background: rgb(0, 0, 0);
+    color: white;
 }
 .about-modal .wrapper main{
     width: 100%;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    gap: 10px;
-}
-.about-modal .wrapper main .left-content{
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    flex-direction: row-reverse;
-}
-.about-modal .wrapper main .left-content img{
-    width: 50%;
-    border-radius: 14px;
-}
-.about-modal .wrapper main .left-content ul{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-size: 25px;
+    gap: 30px;
+
 }
-.about-modal .wrapper main .right-content{
+.about-modal .wrapper main > h2{
+    font-size: 21px;
+    opacity: 60%;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--main-clr);
+
+}
+.about-modal .wrapper main p{
+    font-size: 20px;
+}
+.about-modal .wrapper main > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.about-modal .wrapper main > div div{
     display: flex;
-    align-items: center;
-}
-.about-modal .wrapper main .right-content p{
-    font-size: 24px;
+    flex-direction: column;
+    gap: 5px;
 }
 
 
-
-
-
-@media (max-width: 1150px) {
-    .about-modal .wrapper header h2{
-        font-size: 60px;
-    }
-    .about-modal .wrapper{
-        padding: 30px 50px;
-        gap: 15px;
-    }
+@media (max-width: 1000px) {
     .about-modal .wrapper main{
-        width: 100%;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-        gap: 10px;
-        grid-template-columns:repeat(1, 1fr);
-    }
-    .about-modal .wrapper main .left-content{
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        flex-direction: column;
-    }
-    .about-modal .wrapper main .left-content img{
-        width: 50%;
-        border-radius: 14px;
-    }
-    .about-modal .wrapper main .left-content ul{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        font-size: 20px;
-    }
-    .about-modal .wrapper main .right-content p{
         display: none;
     }
 }
 @media (max-width: 500px) {
-    .about-modal .wrapper header h2{
-        font-size: 40px;
+    .close-btn{
+        position: absolute;
+        left: 30px;
+        top: -30px;
+        cursor: pointer;
     }
-    .about-modal .wrapper{
-        padding: 30px 10px;
-        gap: 15px;
+    .close-btn i{
+        color: white;
     }
-    .about-modal .wrapper main .left-content p{
-        font-size: 15px;
+    .like-container{
+        right: 30px;
+        top: -30px;
+        cursor: pointer;
+        color: white;
     }
-
+    .about-modal .wrapper .profile-detail .top{
+        gap: 10px;
+        
+    }
+    .about-modal .wrapper .profile-detail .top div h2{
+        font-size: 14px;
+        width: 70px;
+    }
+    .about-modal .wrapper .profile-detail .top div span{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .about-modal .wrapper .profile-detail .top .profile-image img{
+        max-width: 100px;
+    }
+    .about-modal .wrapper .profile-detail .social-links{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
 }
+
 
 
 .about-section .skill-wrapper{
@@ -1319,7 +1453,6 @@ nav .nav-links ul li:hover{
 .about-section .skill-wrapper .left-content{
     min-width: fit-content;
     color: var(--clr-2);
-    transform: rotate(-9deg);
     transition: transform .4s;
 }
 .about-section .skill-wrapper .left-content:hover{
@@ -1328,7 +1461,7 @@ nav .nav-links ul li:hover{
 .about-section .skill-wrapper .left-content h2{
     font-size: 70px;
     margin-bottom: 5px;
-    color: var(--main-clr);
+    color: var(--clr-2);
     font-weight: 900;
     position: relative;
     width: fit-content;
@@ -1403,7 +1536,12 @@ nav .nav-links ul li:hover{
     }
 
 }
-
+@media (max-width: 500px) {
+    .about-section .skill-wrapper .left-content h2{
+        font-size: 50px;
+    }
+    
+}
 
 
 
@@ -1414,23 +1552,56 @@ nav .nav-links ul li:hover{
     /* background: #2b2726; */
 }
 .contact-section main{
-    max-width: 50%;
+    max-width: 85%;
     position: relative;
-    padding: 70px 0px 150px 0px;
-
+    padding: 170px 0px 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-section main a{
+    text-decoration: none;
 }
 .contact-section main h2{
-    font-size: 50px;
+    font-size: 60px;
     color: var(--clr-2);
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.contact-section main h2::before{
+    content: '';
+    width: 300px;
+    height: 15px;
+    border-radius: 30px;
+    background: var(--clr-2);
+    position: absolute;
+    top: -40px;
+    cursor: pointer;
+    animation: contact-down-up-anim 4s infinite;
+    transition: .4s;
+}
+
+@keyframes contact-down-up-anim {
+    0%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
 }
 .contact-section main .social-links{
-    width: 100%;
+    width: fit-content;
     padding-top: 60px;
 }
 .contact-section main .social-links ul{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    gap: 35px;
 }
 .contact-section main .social-links ul li{
     position: relative;
@@ -1467,7 +1638,13 @@ nav .nav-links ul li:hover{
 @media(max-width: 800px){
     .contact-section main{
         max-width: 90%;
-        padding: 60px 0px 100px 0px;
+        padding: 100px 0px 100px 0px;
+    }
+    .contact-section main h2{
+        font-size: 45px;
+    }
+    .contact-section main h2::before{
+        width: 50%;
     }
     .contact-section main .social-links ul{
         display: flex;
@@ -1486,14 +1663,20 @@ nav .nav-links ul li:hover{
         font-size: 35px;
     }
     .contact-section main .social-links{
-        padding-top: 30px;
+        padding-top: 50px;
+    }
+    .contact-section main .social-links ul{
+        gap: 10px;
+    }
+    .contact-section main{
+        max-width: 95%;
     }
 }
 
 .contact-form{
     min-height: 20vh;
     margin-top: 100px;
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -1518,7 +1701,7 @@ nav .nav-links ul li:hover{
 .contact-form form .input-form input{
     width: 100%;
     padding: 10px;
-    border-bottom: 2px var(--clr-2) solid;
+    border-bottom: 1px var(--clr-2) solid;
     font-weight: 600;
     font-size: 20px;
     background: transparent;
@@ -1544,7 +1727,7 @@ nav .nav-links ul li:hover{
     min-height: 100px;
     resize: none;
     padding: 15px 10px;
-    border-bottom: 2px var(--clr-2) solid;
+    border-bottom: 1px var(--clr-2) solid;
     font-weight: 600;
     font-size: 20px;
     background: transparent;
@@ -1570,6 +1753,22 @@ nav .nav-links ul li:hover{
 }
 .contact-form form button:hover{
     background: darkcyan;
+}
+@media (max-width: 700px) {
+    .contact-form{
+        min-height: 20vh;
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        align-items: center;
+        color: var(--clr-2);
+    }
+    .contact-form h3{
+        font-size: 23px;
+        text-align: center;
+    }
 }
 
 .message-toast{
@@ -1655,4 +1854,62 @@ nav .nav-links ul li:hover{
 }
 .main-loader > div > div span{
     padding: 15px 0px;
+}
+
+
+
+
+/* rating-container */
+
+.rating-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    place-content: center;
+    background: rgba(0, 0, 0, 0.635);
+    transition: .4s;
+}
+.rating-container.active{
+    display: grid;
+}
+.rating-container .rating-modal{
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.rating-container .rating-modal .rating-bar{
+    display: flex;
+    gap: 20px;
+}
+.rating-container .rating-modal .rating-bar i{
+    font-size: 23px;
+    color: rgb(180, 180, 180);
+    cursor: pointer;
+    /* transition: .4s transform; */
+}
+.rating-container .rating-modal .rating-bar i:hover{
+    transform: scale(1.2);
+}
+.rating-container .rating-modal .rating-bar i.active{
+    color: rgb(247, 189, 0);
+    transform: scale(1.2);
+
+}
+.rating-container .rating-modal button{
+    padding: 7px 15px;
+    width: fit-content;
+    border-radius: 10px;
+    background: var(--main-clr);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
 }

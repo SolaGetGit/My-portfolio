@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
     <nav class="nav-bar">
         <div class="nav-links">
             <ul class="links">
@@ -71,7 +70,6 @@
 
     <!-- =========== Start making section 1 or Home section ============ -->
     <section class="home-page" id="home-section">
-
         <div class="container" id="home-container">
             <div class="text-wrap">
                 <span>I'm</span>
@@ -94,7 +92,7 @@
 
                 <div>
                     <h2 class="city"></h2>
-                    <h2 class="weather">6&#8451; </h2>
+                    <h2 class="weather">6&#8451;</h2>
                     <h2 class="clock"></h2>
                     <i class="fa-solid fa-cloud"></i>
                 </div>
@@ -156,10 +154,10 @@
             <div class="cursor" id="cursor"></div>
 
             <header>
-                <h2>Who am i?</h2>
+                <h2>About me</h2>
             </header>
             <div class="about-content">
-                <p>  I'm Solomon getnet i live in Ethiopia/Adiss Ababa i'm  <strong>Website designer</strong> i am 18 years old i make very best website in the world Lorem ipsum dolor sig elit. Nihil illo ad eius, distinctio, deserunt incidunt delectus consequuntur aspernatur, ratione dolorum odio asperiores totam! Itaque earum nulla rerum aliquam maxime iure. </p>
+                <p>  I'm Solomon getnet i live in Ethiopia/Adiss Ababa i'm  <strong>Website designer</strong> i am 18 yeNil illo ad eius, ive in Ethiopia/Adiss Ababa ive in Ethiopia/Adiss Ababa distinctio, deserunt incidunt delectus consequuntur aspernatur, ratione dolorum odio asperiores totam! Itaque earum nulla rerum aliquam maxime iure. </p>
                 <button id="open-about-modal">Read more</button>
             </div>
        </div>
@@ -182,30 +180,66 @@
 
     <div class="about-modal">
         <div class="wrapper">
-            <header>
-                <h2>About me</h2>
-                <button class="close-about-modal"><span>Close</span><i class="fa fa-times"></i></button>
-            </header>
+            <span class="close-btn" id="close-about-modal"><i class="fa fa-chevron-left"></i></span>
 
-            <main>
-                <div class="left-content">
-                  <img src="images/profile-pic.jpg" alt="">
-                  <ul>
-                    <li><strong>Name</strong> Solmon getnet</li>
-                    <li><strong>Age</strong> 18</li>
-                    <li><strong>Address</strong> Ethippia</li>
-                    <li><strong>Phone</strong> 0908912554</li>
-                    <li><strong>Degree</strong> Self learner</li>
-                    <li><strong>Freelance</strong> Available</li>
-                  </ul>
+            <div class="like-container">
+                <div class="like-counter"></div>
+                <span class="like-btn" id="about-like-btn"><i class="fa fa-heart"></i></span>
+            </div>
+
+            <div class="profile-detail">
+                <div class="top">
+                    <div>
+                        <h2>Country</h2>
+                        <span>Ethiopia</span>
+                    </div>
+
+                    <span class="profile-image">
+                        <img src="images/profile-pic.jpg" alt="" srcset="">
+                    </span>
+                    
+                    <div>
+                        <h2>Age</h2>
+                        <span>18</span>
+                    </div>
+
                 </div>
 
-                <div class="right-content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequuntur voluptate fugiat sed aliquam similique accusantium ducimus laboriosam sunt cumque, quae fugit dolores, deserunt porro assumenda soluta illum libero ea?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequuntur voluptate fugiat sed aliquam similique accusantium ducimus laboriosam sunt cumque, quae fugit dolores, deserunt porro assumenda soluta illum libero ea?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequuntur voluptate fugiat sed aliquam similique accusantium ducimus laboriosam sunt cumque, quae fugit dolores, deserunt porro assumenda soluta illum libero ea?
-                    </p>
+                <div class="bottom">
+                    <h2>Solomon Getnet</h2>
+                    <p>Web Designer / Developer </p>
+                </div>
+
+                <div class="social-links">
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
+                    <span><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span><i class="fa-brands fa-github"></i></span>
+                </div>
+            </div>
+
+
+
+            <main>
+                <h2>My Value</h2>
+
+                <div>
+                    <div>
+                        <h2>Passion is Everything</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae molestias quas distinctio minima vitae adipisci culpa reprehenderit numquam libero sit. Quam fuga repudiandae, quas dicta eum doloribus ipsam nihil assumenda.</p>
+                    </div>
+
+                    <div>
+                        <h2>Never stop learning</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae molestias quas distinctio minima vitae adipisci culpa reprehenderit numquam libero sit. Quam fuga repudiandae, quas dicta eum doloribus ipsam nihil assumenda.</p>
+                    </div>
+
+                    <div>
+                        <h2>Be human</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae molestias quas distinctio minima vitae adipisci culpa reprehenderit numquam libero sit. Quam fuga repudiandae, quas dicta eum doloribus ipsam nihil assumenda.</p>
+                    </div>
+
                 </div>
             </main>
         </div>
@@ -214,9 +248,12 @@
 
     <section class="contact-section" id="contact-section">
         <main>
-            <h2>
-                Want to reach out about a project, collobration or just want to say friendly hello?
-            </h2>
+
+            <a href="#contact-section">
+                <h2>
+                    Want to reach out about a project, collobration or just want to say friendly hello?
+                </h2>
+            </a>
 
             <div class="social-links">
                 <ul>
@@ -255,7 +292,7 @@
 
 
 
-    <div class="main-loader">
+    <!-- <div class="main-loader">
         <div>
             <h2>I'm</h2>
             <div class="loader-slider">
@@ -263,6 +300,21 @@
                 <span>Website Designer</span>
                 <span>Freelancer</span>
             </div>
+        </div>
+    </div> -->
+
+
+    <div class="rating-container">
+        <div class="rating-modal">
+            <h2>How is your Exceprience?</h2>
+            <div class="rating-bar">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <span class="rating-result"></span>
         </div>
     </div>
 </body>
